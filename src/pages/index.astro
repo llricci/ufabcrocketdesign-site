@@ -1,57 +1,235 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import membros_lasc from '../assets/membros_lasc.png';
+import membros_rg from '../assets/membros_rg.png'
 ---
 
-<Layout>
+<Layout title="UFABC Rocket Design">
+
+  <section id="hero">
+    <Image class="membros-lasc" src={membros_lasc} alt="Foto da equipe completa" loading={'eager'} width={800}/>
+    <div class="subhero">
+      <Image class="logo" src={logo} alt="Logo da equipe" loading={'eager'} width={200}/>
+			<div class="text-content">
+				<h1>UFABC Rocket Design</h1>
+				<p class="subhero-description">Pioneiros e líderes no foguetemodelismo brasileiro. Transformamos sonhos em lançamentos, impulsionando o setor aeroespacial rumo ao futuro!</p>
+				</div>
+    </div>
+
+  </section>
+
+  <section id="equipe">
+    <h1>A Equipe</h1>
+		<div class="grid-container">
+			<div class="grid-item">
+				<h2>História</h2>
+				<p>Fundada em 20 de janeiro de 2010, a UFABC Rocket Design é a primeira e maior equipe de foguetemodelismo do Brasil. Com mais de 20 projetos e diversos prêmios em competições internacionais, destacamo-nos pelo impacto gerado na sociedade, tanto pelas iniciativas de extensão quanto pelas mais de 100 pesquisas publicadas.</p>
+			</div>
+			<div class="grid-item">
+				<h2>Valores e Objetivos</h2>
+				<p>Somos entusiastas do setor aeroespacial, que trabalhamos para desenvolver o cenário brasileiro através do ensino, pesquisa, desenvolvimento, produção e lançamento de foguetes</p>
+			</div>
+			<div class="grid-item">
+				<h2>Organização</h2>
+				<p>Somos uma equipe multidisciplinar, com alunos de mais de 15 cursos divididos em cinco áreas: Gestão, Missão, Pesquisa, Extensão e Marketing. Unindo diferentes formações, buscamos excelência por meio da colaboração e troca de conhecimentos, o que enriquece nossos projetos e permite soluções inovadoras para alcançar voos cada vez mais altos.</p>
+			</div>
+		</div>
+  </section>
+
+	<section id="membros">
+		<h1>Membros</h1>
+		<div class="container">
+			<Image class="membros-rg" src={membros_rg} alt="Foto da equipe em uam reunião geral" loading={'lazy'} width={1200}/>
+			<div class="stats-contaienr">
+				<div class="stats">
+					<h2>100+</h2>
+					<p>Membros Ativos</p>
+				</div>
+				<div class="stats">
+					<h2>40+</h2>
+					<p>Consultores</p>
+				</div>
+				<div class="stats">
+					<h2>500+</h2>
+					<p>Atuaram</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="apoio">
+		<h1>Apoio</h1>
+		<!-- Foto dos apoiadores -->
+		<p>A UFABC Rocket Design é movida pela paixão e dedicação, nossos membros investem tempo e recursos próprios para tornar nossos sonhos uma realidade. No entanto, para que possamos continuar inovando e alcançando novas alturas, para que possamos continuar inovando e alcançando novas alturas, precisamos de apoio.</p>
+		<h2>Por que nos apoiar?</h2>
+		<ul>
+			<li><strong>Inovação e Excelência</strong>: Associe sua marca a um time inovador, que busca soluções tecnológicas avançadas e mantém elevados padrões de qualidade.</li>
+			<li><strong>Visibilidade Nacional e Internacional</strong>: Promovemos e participamos de eventos científicos de destaque, além de disputar as maiores competições do mundo, proporcionando ampla visibilidade para a marca dos nossos patrocinadores.</li>
+			<li><strong>Contribuição para o Futuro Tecnológico do Brasil</strong>: Apoie a educação, a inovação e a capacitação de talentos brasileiros.</li>
+			<li><strong>Ações Publicitárias</strong>: Realizamos ações de marketing personalizadas, alinhadas às necessidades da empresa, fortalecendo sua marca de forma estratégica.</li>
+		</ul>
+		<h2>Como você pode ajudar?</h2>
+		<p class="apoio-text-1">Junte-se a nós e faça parte dessa jornada de inovação e transformação no setor aeroespacial brasileiro! Sua contribuição, seja pessoal ou empresarial, pode ocorrer das seguintes formas:</p>
+		<ul>
+			<li><strong>Doações</strong>: Todo valor é bem vindo e será integralmente destinado ao desenvolvimento de nossos projetos.</li>
+			<li><strong>Participar de nossas campanhas de arrecadação</strong>: Através do nosso Instagram, divulgamos nossas rifas, venda de produtos e demais campanhas.</li>
+			<li><strong>Parcerias e patrocínios</strong>: Empresas e instituições podem se tornar parceiras e ter acesso ao nossos benefícios nos apoiando das seguintes maneiras:</li>
+			<ul>
+				<li><strong>Apoio financeiro</strong></li>
+				<li><strong>Fornecimento de materiais</strong></li>
+				<li><strong>Prestação de serviços</strong></li>
+				<li><strong>Capacitação dos membros</strong></li>
+			</ul>
+		</ul>
+		<p class="apoio-text-2">Acesse nosso portfólio comercial e descubra em detalhes nossos projetos, conquistas e o impacto que estamos gerando. Entre em contato conosco e contribua para o sucesso dessa missão!</p>
+		<h2>Contato para Parcerias e Patrocínios</h2>
+		<p>Para mais informações sobre como se tornar um parceiro ou patrocinador, entre em contato conosco:</p>
+		<p>Email: foguetes@ufabc.edu.br</p>
+	</section>
 </Layout>
 
-<style>
-	/* http://meyerweb.com/eric/tools/css/reset/ 
-		v2.0 | 20110126
-		License: none (public domain)
-	*/
+<style lang="scss">
+	$primary-color: #534ee6;
+  $text-color: #ffffff;
+  $transition-fast: 0.3s ease;
+  $mobile-padding: 1.5rem;
+  $desktop-padding: 2.5%;
 
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
+	section {
+		min-height: 10vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 100px $desktop-padding 0;
+		box-sizing: border-box;
+  }
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		// margin-bottom: 2rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
 	}
-	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure, 
-	footer, header, hgroup, menu, nav, section {
-		display: block;
+
+	p, ul, li {
+		font-size: 1.6rem;
+    line-height: 1.6;
+    color: rgba($text-color, 1);
 	}
-	body {
-		line-height: 1;
+
+	#hero {
+		.membros-lasc {
+			display: block;
+			margin: 0 auto 1rem auto;
+			border-radius: 4%;
+		}
+
+		.subhero {
+			display: flex;
+			justify-content: center;
+			gap: 48px;
+
+			.text-content {
+				display: flex;
+				align-items: center;
+				line-height: 1;
+				gap: 48px;
+
+				.subhero-description {
+					max-width: 1600;
+				}
+
+				h1 {
+					max-width: 15rem;
+				}
+			}
+		}
 	}
-	ol, ul {
-		list-style: none;
+
+	#equipe {
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		p {
+			text-indent: 3rem;
+		}
+
+		h2 {
+			text-align: center;
+			font-weight: 900;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			place-self: center;
+			gap: 48px;
+
+			.grid-item {
+				max-width: 500px;
+				text-align: justify;
+			}
+		}
 	}
-	blockquote, q {
-		quotes: none;
+
+	#membros {
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 48px;
+
+			.membros-rg {
+				border-radius: 4%;
+			}
+
+			.stats {
+				font-size: 2rem;
+
+				h2 {
+					font-weight: 900;
+					color: rgba($primary-color, 1)
+				}
+			}
+		}
+
+		
 	}
-	blockquote:before, blockquote:after,
-	q:before, q:after {
-		content: '';
-		content: none;
-	}
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
+
+	#apoio {
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		h2 {
+			color: rgba($primary-color, 1);
+			font-size: 2.5rem;
+			margin: 2rem 0 2rem 0
+		}
+
+		p {
+			text-indent: 3rem;
+		}
+
+		.apoio-text-1 {
+			margin-bottom: 2rem;
+		}
+
+		.apoio-text-2 {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
 	}
 </style>
