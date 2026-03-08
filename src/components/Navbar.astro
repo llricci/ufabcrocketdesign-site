@@ -1,0 +1,63 @@
+---
+const { title = "UFABC ROCKET DESIGN" } = Astro.props;
+const pathname = new URL(Astro.url).pathname;
+const currentPath = pathname.slice(1);
+
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png'
+---
+
+<nav>
+  <div class="logo">
+    <Image src={logo} alt="Logo da equipe" loading={'eager'} width={64}/>
+    <a href="/">{title}</a>
+  </div>
+  <ul>
+    <li><a href="#equipe" class={currentPath === "" ? "active" : ""}>A EQUIPE</a></li>
+    <li><a href="#membros" class={currentPath === "sobre" ? "active" : ""}>MEMBROS</a></li>
+    <li><a href="#apoio" class={currentPath === "projetos" ? "active" : ""}>APOIO</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #292929;
+    color: white;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover{
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+</style>

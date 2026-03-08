@@ -1,0 +1,208 @@
+---
+import Navbar from '../components/Navbar.astro';
+import { Image } from 'astro:assets';
+import '@fontsource-variable/roboto';
+
+import logo from '../assets/logo.png'
+import membros from '../assets/membros.png'
+import membros_rg from '../assets/membros_rg.png'
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UFABC Rocket Design</title>
+</head>
+<body>
+  <Navbar title="UFABC ROCKET DESIGN"/>
+
+  <div class="container-background-estrelas">
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+  </div>
+
+  <section id="historia">
+    <Image id="base" src={membros} alt="Foto da equipe completa" loading={'eager'} width={900}/>
+    <div id="historia-logo">
+      <Image id="logo" src={logo} alt="Logo da equipe" loading={'eager'} width={200}/>
+      <h1>UFABC ROCKET DESIGN</h1>
+      <h1 id="historia-text">Pioneiros e líderes no foguetemodelismo brasileiro. Transformamos sonhos em lançamentos, impulsionando o setor aeroespacial rumo ao futuro!</h3>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <h1>A EQUIPE</h1>
+
+    <h1>HISTÓRIA</h1>
+    <p>Fundada em 20 de janeiro de 2010, a UFABC Rocket Design é a primeira e maior equipe de foguetemodelismo do Brasil. Com mais de 20 projetos e diversos prêmios em competições internacionais, destacamo-nos pelo impacto gerado na sociedade, tanto pelas iniciativas de extensão quanto pelas mais de 100 pesquisas publicadas.</p>
+
+    <h1>VALORES E OBJETIVOS</h1>
+    <p>Somos entusiastas do setor aeroespacial, que trabalhamos para desenvolver o cenário brasileiro através do ensino, pesquisa, desenvolvimento, produção e lançamento de foguetes</p>
+
+    <h1>ORGANIZAÇÃO</h1>
+    <p>Somos uma equipe multidisciplinar, com alunos de mais de 15 cursos divididos em cinco áreas: Gestão, Missão, Pesquisa, Extensão e Marketing. Unindo diferentes formações, buscamos excelência por meio da colaboração e troca de conhecimentos, o que enriquece nossos projetos e permite soluções inovadoras para alcançar voos cada vez mais altos.</p>
+  </section>
+
+  <section id="membros">
+    <h1>MEMBROS</h1>
+    
+    <Image id="membros-rg" src={membros_rg} alt="Foto da equipe completa em uma reunião geral" loading={'eager'} width={1600}/>
+
+    <div class="container-estatistica">
+      <div>
+        <h1>136</h1>
+        <p>MEMBROS ATIVOS</p>
+      </div>
+      <div>
+        <h1>43</h1>
+        <p>CONSULTORES</p>
+      </div>
+      <div>
+        <h1>506</h1>
+        <p>JÁ ATUARAM</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apoio">
+    <h1>APOIO</h1>
+
+    <!-- Adicionar imagem dos patrocínios -->
+
+    <p>A UFABC Rocket Design é movida pela paixão e dedicação, nossos membros investem tempo e recursos próprios para tornar nossos sonhos uma realidade. No entanto, para que possamos continuar inovando e alcançando novas alturas, para que possamos continuar inovando e alcançando novas alturas, precisamos de apoio.</p>
+
+    <h1>Por que nos apoiar?</h1>
+    <ul>
+      <li>Inovação e Excelência: Associe sua marca a um time inovador, que busca soluções tecnológicas avançadas e mantém elevados padrões de qualidade.</li>
+      <li>Visibilidade Nacional e Internacional: Promovemos e participamos de eventos científicos de destaque, além de disputar as maiores competições do mundo, proporcionando ampla visibilidade para a marca dos nossos patrocinadores.</li>
+      <li>Contribuição para o Futuro Tecnológico do Brasil: Apoie a educação, a inovação e a capacitação de talentos brasileiros.</li>
+      <li>Ações Publicitárias: Realizamos ações de marketing personalizadas, alinhadas às necessidades da empresa, fortalecendo sua marca de forma estratégica.</li>
+    </ul>
+
+    <h1>Como você pode ajudar?</h1>
+    <p>Junte-se a nós e faça parte dessa jornada de inovação e transformação no setor aeroespacial brasileiro! Sua contribuição, seja pessoal ou empresarial, pode ocorrer das seguintes formas:</p>
+    <ul>
+      <li>Doações: Todo valor é bem vindo e será integralmente destinado ao desenvolvimento de nossos projetos.</li>
+      <li>Participar de nossas campanhas de arrecadação: Através do nosso Instagram, divulgamos nossas rifas, venda de produtos e demais campanhas.</li>
+      <li>Parcerias e patrocínios: Empresas e instituições podem se tornar parceiras e ter acesso ao nossos benefícios nos apoiando das seguintes maneiras:</li>
+      <ul>
+        <li>Apoio financeiro</li>
+        <li>Fornecimento de materiais</li>
+        <li>Prestação de serviços</li>
+        <li>Capacitação dos membros</li>
+      </ul>
+    </ul>
+    <p><a href="https://www.youtube.com" target="_blank">Acesse nosso portfólio comercial</a> e descubra em detalhes nossos projetos, conquistas e o impacto que estamos gerando. Entre em contato conosco e contribua para o sucesso dessa missão!</p>
+
+  </section>
+</body>
+</html>
+
+<style lang="scss">
+  @use "sass:math";
+  @use "sass:string";
+
+  body {
+    font-family: 'Roboto Variable', sans-serif !important;
+    color: white;
+    background-color: black;
+  }
+
+  section {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  p, ul, li {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  /* 
+  - Made by sarazond 
+  - https://codepen.io/sarazond/pen/LYGbwj?editors=0100
+  */
+
+  .container-background-estrelas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  $area-cobertura: 6000;
+  $cor-estrela: #ffffff;
+
+  @function criar-estrelas($quantidade) {
+    $valor: '#{math.random($area-cobertura)}px #{math.random($area-cobertura)}px #{$cor-estrela}';
+    @for $i from 2 through $quantidade {
+      $valor: '#{$valor}, #{math.random($area-cobertura)}px #{math.random($area-cobertura)}px #{$cor-estrela}';
+    }
+    @return string.unquote($valor);
+  }
+
+  #stars  { box-shadow: criar-estrelas(2000); width: 1px; height: 1px; animation: mover 100s linear infinite; }
+  #stars2 { box-shadow: criar-estrelas(1000); width: 2px; height: 2px; animation: mover 150s linear infinite; }
+  #stars3 { box-shadow: criar-estrelas(500); width: 3px; height: 3px; animation: mover 200s linear infinite; }
+
+  @keyframes mover {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-4000px); }
+  }
+
+  #historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #historia #base {
+    border-radius: 4%;
+  }
+  
+  #historia #historia-logo {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  #historia #historia-text {
+    font-weight: normal;
+  }
+
+  #equipe {
+  }
+
+  #membros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #membros #membros-rg {
+    border-radius: 4%;
+  }
+
+  #membros .container-estatistica{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  #apoio {
+  }
+</style>
