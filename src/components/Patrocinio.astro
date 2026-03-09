@@ -1,0 +1,126 @@
+---
+const sponsors = [
+  { tier: 'diamante', color: '#00B4B4', logos: [
+    { name: 'Guatifer', src: '/src/assets/logos/guatifer.png', url: 'https://www.guatiferusinagem.com.br/', placeholder: false },
+    { name: 'SENAI', src: '/src/assets/logos/senai.png', url: 'https://www.sp.senai.br/unidade/santoandre/', placeholder: false }
+  ]},
+  { tier: 'ouro', color: '#D4AF37', logos: [
+    { name: 'Balanças Siciliano', src: '/src/assets/logos/siciliano.png', url: 'https://sicilianobalancas.com.br/', placeholder: false },
+    { name: 'Engineering Simulation And Scientific Software', src: '/src/assets/logos/esss.png', url: 'https://www.esss.com', placeholder: false },
+    { name: 'Fundação Universidade Federal do ABC', src: '/src/assets/logos/ufabc.png', url: 'https://www.ufabc.edu.br', placeholder: false },
+    { name: 'InovaUFABC Agência de Inovação', src: '/src/assets/logos/inova.png', url: 'https://inova.ufabc.edu.br', placeholder: false },
+    { name: 'Rainha das Tintas', src: '/src/assets/logos/rainha.png', url: 'http://www.rainhadastintas.com.br', placeholder: false },
+    { name: 'Space Farming Brazil', src: '/src/assets/logos/spacefarming.png', url: 'https://www.embrapa.br/en/pecuaria-sudeste/agricultura-espacial', placeholder: false }
+  ]},
+  { tier: 'prata', color: '#A8A8A8', logos: [
+    { name: 'Altair Engineering', src: '/src/assets/logos/altair.png', url: 'https://altair.com', placeholder: false },
+    { name: 'Ansys', src: '/src/assets/logos/ansys.png', url: 'https://www.ansys.com', placeholder: false },
+    { name: 'Bizu Space', src: '/src/assets/logos/bizu.png', url: 'https://www.bizu.space/pt', placeholder: false },
+    { name: 'BrasFila', src: '/src/assets/logos/brasfila.png', url: 'https://www.brasfila.com.br/', placeholder: false },
+    { name: 'Circuibras', src: '/src/assets/logos/circuibras.png', url: 'https://circuibras.com.br', placeholder: false },
+    { name: 'GPDA', src: '/src/assets/logos/gpda.png', url: 'https://www.gpdaufabc.tech', placeholder: false },
+    { name: 'Jade Art\'s', src: '/src/assets/logos/jade.png', url: 'https://www.facebook.com/artesjade/', placeholder: false },
+    { name: 'Mac Jee', src: '/src/assets/logos/macjee.png', url: 'https://macjee.com.br', placeholder: false },
+    { name: 'Math Works', src: '/src/assets/logos/mathworks.png', url: 'https://www.mathworks.com/', placeholder: false },
+    { name: 'MTB Mantas Térmicas', src: '/src/assets/logos/mtb.png', url: 'https://mantamtb.com', placeholder: false },
+    { name: 'Multitech', src: '/src/assets/logos/multitech.png', url: 'https://multittech.com.br', placeholder: false },
+    { name: 'Rubber Plast', src: '/src/assets/logos/rubberplast.png', url: 'https://www.rubberplast.com.br', placeholder: false },
+    { name: 'Spawn Pinturas', src: '/src/assets/logos/spawnpinturas.png', url: 'https://www.facebook.com/SPAWNPINTURAS', placeholder: false },
+    { name: 'Texiglass', src: '/src/assets/logos/texiglass.png', url: 'https://texiglass.com.br/', placeholder: false },
+    { name: 'WR Metais', src: '/src/assets/logos/wrmetais.png', url: 'https://www.facebook.com/p/Wr-Metais-100063988244180/', placeholder: false }
+  ]},
+  { tier: 'bronze', color: '#CD7F32', logos: [
+    { name: 'Redelease', src: '/src/assets/logos/redelease.png', url: 'https://www.redelease.ind.br/', placeholder: false },
+    { name: 'MaxiAr', src: '/src/assets/logos/maxiar.png', url: 'https://www.maxiar.com.br/', placeholder: false },
+    { name: 'LOCFER', src: '/src/assets/logos/locfer.png', url: 'https://locfer.com.br', placeholder: false }
+  ]},
+];
+---
+
+<section class="sponsor-container">
+  {sponsors.map((group) => (
+    <div class="tier-row">
+      <div class="sidebar" style={`background-color: ${group.color}`}>
+        <span>{group.tier}</span>
+      </div>
+
+      <div class="logo-grid">
+        {group.logos.map((logo) => (
+          <a 
+            href={logo.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="logo-card"
+            title={`Visitar site de ${logo.name}`}
+          >
+            {logo.placeholder ? (
+              <p class="placeholder-text">logomarca da empresa <br/> <strong>{logo.name}</strong></p>
+            ) : (
+              <img src={logo.src} alt={logo.name} />
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  .sponsor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .tier-row {
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .sidebar {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: lowercase;
+  }
+
+  .sidebar span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .logo-grid {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 40px;
+  }
+
+  .logo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+  }
+
+  .placeholder-text {
+    color: white;
+    font-size: 0.9rem;
+  }
+</style>
