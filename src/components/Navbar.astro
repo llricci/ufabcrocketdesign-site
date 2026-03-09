@@ -60,4 +60,33 @@ import logo from '../assets/logo.png'
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 1rem;
+      gap: 12px;
+    }
+
+    .logo {
+      gap: 10px;
+      
+      a {
+        font-size: 1.2rem;
+      }
+      
+      img {
+        width: 48px;
+        height: auto;
+      }
+    }
+
+    ul {
+      gap: 15px;
+      
+      li a {
+        font-size: 0.9rem;
+      }
+    }
+  }
 </style>

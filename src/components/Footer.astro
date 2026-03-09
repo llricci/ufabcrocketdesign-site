@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import Social from '../components/Social.astro';
 import logo from '../assets/logo.png'
 ---
 
@@ -109,6 +108,43 @@ import logo from '../assets/logo.png'
 
     p {
       font-size: 1rem
+    }
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 40px 5% 20px;
+
+      .container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+    }
+
+    .footer-contacts {
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand {
+      justify-self: center;
+      flex-direction: column;
+      gap: 10px;
+
+      img {
+        width: 96px;
+        height: auto;
+      }
+    }
+
+    .footer-nav {
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.9rem;
     }
   }
 </style>

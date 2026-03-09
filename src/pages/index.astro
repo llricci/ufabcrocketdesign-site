@@ -42,7 +42,7 @@ import membros_rg from '../assets/membros_rg.png'
 		<h1>Membros</h1>
 		<div class="container">
 			<Image class="membros-rg" src={membros_rg} alt="Foto da equipe em uam reunião geral" loading={'lazy'} width={1200}/>
-			<div class="stats-contaienr">
+			<div class="stats-container">
 				<div class="stats">
 					<h2>100+</h2>
 					<p>Membros Ativos</p>
@@ -97,6 +97,11 @@ import membros_rg from '../assets/membros_rg.png'
   $mobile-padding: 1.5rem;
   $desktop-padding: 2.5%;
 
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
 	section {
 		min-height: 10vh;
 		display: flex;
@@ -138,7 +143,7 @@ import membros_rg from '../assets/membros_rg.png'
 				gap: 48px;
 
 				.subhero-description {
-					max-width: 1600;
+					max-width: 1600px;
 				}
 
 				h1 {
@@ -230,6 +235,67 @@ import membros_rg from '../assets/membros_rg.png'
 		.apoio-text-2 {
 			margin-top: 2rem;
 			margin-bottom: 2rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		section {
+			padding: 60px $mobile-padding 0;
+		}
+
+		p, ul, li {
+			font-size: 1.2rem;
+			text-indent: 0 !important;
+		}
+
+		#hero {
+			.subhero, .text-content {
+				flex-direction: column;
+				text-align: center;
+				gap: 24px;
+
+				.logo {
+					display: none;
+				}
+
+				h1 {
+					max-width: 100%;
+				}
+			}
+		}
+
+		#equipe .grid-container {
+			grid-template-columns: 1fr;
+			gap: 32px;
+
+			.grid-item {
+				text-align: center;
+			}
+		}
+
+		#membros .container {
+			flex-direction: column;
+			text-align: center;
+
+			.stats-container {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				width: 100%;
+			}
+
+			h2 {
+				font-size: 2rem;
+			}
+		}
+
+		#apoio {
+			p {
+				text-align: center;
+			}
+			h2 {
+				font-size: 1.8rem;
+			}
 		}
 	}
 </style>
